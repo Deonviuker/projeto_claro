@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Faixa vermelha para a logo -->
+    <div class="logo-bar">
+        <img src="logo.png" alt="Logo" class="logo">
+        <!-- Substitua "logo.png" pelo caminho da sua imagem de logo -->
+    </div>
+
+    <div class="login-wrapper">
+        <div class="login-box">
+            <h2>Bem-vindo</h2>
+            <p>Faça login para acessar suas faturas</p>
+            <form id="loginForm" onsubmit="logar(event)">
+                <input type="email" placeholder="Email" name="email" id="Email" required>
+                <input type="password" placeholder="Senha" name="senha" id="Senha" required>
+                <button type="submit" onclick="logar(); return false">Entrar</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function logar(event) {
+            event.preventDefault(); // Impede o formulário de ser enviado normalmente
+
+            var login = document.getElementById('Email').value;
+            var senha = document.getElementById('Senha').value;
+
+            if (login === "kevin@gmail.com" && senha === "123") {
+                alert('Sucesso ao entrar');
+                location.href = "fatura.html";
+            } else {
+                alert('Login ou senha incorretos');
+            }
+        }
+    </script>
+</body>
+</html>
